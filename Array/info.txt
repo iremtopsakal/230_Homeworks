@@ -1,0 +1,85 @@
+CONTAGIOUS DISEASE SIMULATION
+
+
+
+In this take-home exam, your task is to simulate the contagion process of an infectious disease. 
+The environment will be provided as a 10x10 grid. Each cell of the grid will contain one of the characters 'H', 
+'I', and '-', where 'H' stands for a healthy, 'I' for an infected person. 
+'-' means that this cell is not occupied by any person; in other words, it is empty.
+
+
+
+In each step of the simulation (for each generation), an infected person will infect all of his/her nearby healthy people. 
+They can only infect through the directions of up, down, right, and left. 
+Diagonal infection is not possible.
+
+
+
+The number of simulation steps is going to be provided as an input, and you will run the simulation accordingly. 
+You will print the state of the grid after the last simulation step has completed.
+
+
+
+While you are computing the next generation,  you will consider only the state of the  PREVIOUS generation.
+
+
+
+INPUT FORMAT:
+
+After each row of the grid, a new line '\n' character will be given. 
+After reading the grid, you should read the number of simulations from the input.
+
+
+
+SAMPLE INPUT AND OUTPUT:
+
+INPUT 1:
+
+--IHH---I-
+-H--------
+----------
+----H-----
+----IH----
+----H-----
+----H-----
+-H--------
+---------I
+-HI--H---I
+1
+OUTPUT 1:
+
+--IIH---I-
+-H--------
+----------
+----I-----
+----II----
+----I-----
+----H-----
+-H--------
+---------I
+-II--H---I
+INPUT 2:
+
+--IHH---I-
+-H--------
+----------
+----H-----
+----IH----
+----H-----
+----H-----
+-H--------
+---------I
+-HI--H---I
+3
+OUTPUT 2:
+
+--III---I-
+-H--------
+----------
+----I-----
+----II----
+----I-----
+----I-----
+-H--------
+---------I
+-II--H---I
