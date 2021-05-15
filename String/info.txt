@@ -1,0 +1,280 @@
+FIND WORDS IN A CHARACTER GRID
+
+--------------------------
+
+In this take-home exam, your task is to find the given list of words inside a given character grid. The dimensions of the character grid will be 8 x 8. Each cell of the character grid will contain one of the capital letters in the English alphabet.
+
+The inputs of the program will be as follows:
+
+1) First, a 8 x 8 character grid will be given as input where each row will be given in separate lines. Each row of the character grid will be separated from other rows with a newline character ('\n') including the last row.
+
+2) Next, the number of list of words to be found will be given as input in a separate line ending with a newline character.
+
+3) Finally, the list of words to be found inside the character grid will be given as input in separate lines. Each word in the list will be separated from other words with a newline character ('\n') including the last word.
+
+
+
+The properties of the character grid and the rules for finding the words are given as follows:
+
+1) The number of list of words may be at least 1 and at most 15. 
+
+2) The length of each word in the list of words will be at least 3 and at most 8 characters.
+
+3) Each word in the list of words may be located inside the character grid in any of:
+
+    a) horizontal which is left to right,
+
+    b) vertical which is up to down,
+
+    c) diagonal which either
+
+        i) starts at an upper-row-left-column and ends with a lower-row-right-column (e.g. a 3 characters length word "PIE "which starts at (1,2) and ends at (3,4) ),
+
+        ii) starts at an upper-row-right-column and ends with a lower-row-left-column (e.g. a 4 characters length word "FEEL" which starts at (2,6) and ends at (5,3) )
+
+directions where each letter that compose that word should be located in the neighboring cells. The directions other than the given above will not be considered while searching any word inside the character grid.
+
+4) When your program finds a word inside the character grid, the letters that compose that word should be substituted with the "#" character. 
+
+5) While searching words inside the character grid, you should consider that a character inside the character grid may be reused to find more than 1 word. Check the sample run for a concrete example.
+
+6) All the words in the list of words will be available on the character grid.
+
+7) All the words inside the list of words will be distinct. 
+
+8) A word inside the character grid will appear only once in the character grid: It is not possible to find any word more than one location inside the character grid.
+
+9) When the list of words is input by the user, the order of the words IS NOT necessarily an alphabetical order.
+
+10) The word is guaranteed to be found inside the character grid if you search in all (vertical, horizontal or diagonal) directions.
+
+
+
+Your program is expected to output the final modified version of the character grid where all the words in the list are substituted with "#" in the character grid and the remaining letters are left as is. Similar to input format, each row of the modified character grid will be printed in distinct rows separated with newline character ('\n') including the last row as output.
+
+
+
+Regulations:
+
+1. The due date to submit THE4 is 19.05.2020 21:00. Late submissions will not be accepted.
+
+2. Copying from the internet and others is strictly forbidden: In case of plagiarism, you will get 0 from this take-home exam and you may be subjected to disciplinary action.
+
+3. Black box method will be used for evaluation. 
+
+
+
+Sample Run
+
+----------
+
+Input:
+
+AWESOMEA
+
+DEKTTADR
+
+DZLZQUOC
+
+RPEYRMDL
+
+EEAEAPRY
+
+SFFNQBDA
+
+SSFTMASN
+
+AWESOGER
+
+5
+
+ADDRESS
+
+STUDY
+
+LEAF
+
+ROMAN
+
+AWESOME
+
+
+
+Output:
+
+#######A
+
+#EKT#AD#
+
+#Z#ZQ##C
+
+#P#YR##L
+
+#E#E#PR#
+
+#F##QBDA
+
+#SFTMASN
+
+AWESOGER
+
+
+
+Explanation of Sample Run:
+
+The following character grid is input by the user:
+
+AWESOMEA
+
+DEKTTADR
+
+DZLZQUOC
+
+RPEYRMDL
+
+EEAEAPRY
+
+SFFNQBDA
+
+SSFTMASN
+
+AWESOGER
+
+
+
+The number of list of words is 5
+
+The list of words are:
+
+ADDRESS
+
+STUDY
+
+LEAF
+
+ROMAN
+
+AWESOME
+
+
+
+The row and column numbers of the character grid are written below to follow the explanations, clearly. 
+
+
+0	1	2	3	4	5	6	7
+0	A	W	E	S	O	M	E	A
+1	D	E	K	T	T	A	D	R
+2	D	Z	L	Z	Q	U	O	C
+3	R	P	E	Y	R	M	D	L
+4	E	E	A	E	A	P	R	Y
+5	S	F	F	N	Q	B	D	A
+6	S	S	F	T	M	A	S	N
+7	A	W	E	S	O	G	E	R
+
+
+
+
+
+
+1. The letters of "ADDRESS" are found in the zeroth to the sixth row, all in column 0. These letters are substituted with the "#" character. Then, the modified character grid becomes as follows:
+
+#WESOMEA
+
+#EKTTADR
+
+#ZLZQUOC
+
+#PEYRMDL
+
+#EAEAPRY
+
+#FFNQBDA
+
+#SFTMASN
+
+AWESOGER
+
+
+
+2. The letters of "STUDY" are found in the diagonal of (0,3),(1,4),(2,5),(3,6),(4,7) where the numbers in the parenthesis represent (row, column) numbers, respectively. These letters are substituted with the "#" character. Then, the modified character grid becomes as follows:
+
+#WE#OMEA
+
+#EKT#ADR
+
+#ZLZQ#OC
+
+#PEYRM#L
+
+#EAEAPR#
+
+#FFNQBDA
+
+#SFTMASN
+
+AWESOGER
+
+
+
+3. The letters of "LEAF" are found in the second to the fifth row, all in column 2. These letters are substituted with the "#" character. Then, the modified character grid becomes as follows:
+
+#WE#OMEA
+
+#EKT#ADR
+
+#Z#ZQ#OC
+
+#P#YRM#L
+
+#E#EAPR#
+
+#F#NQBDA
+
+#SFTMASN
+
+AWESOGER
+
+
+
+4. The letters of "ROMAN" are found in the diagonal of (1,7),(2,6),(3,5),(4,4),(5,3) where the numbers in the parenthesis represent (row, column) numbers, respectively. These letters are substituted with the "#" character. Then, the modified character grid becomes as follows:
+
+#WE#OMEA
+
+#EKT#AD#
+
+#Z#ZQ##C
+
+#P#YR##L
+
+#E#E#PR#
+
+#F##QBDA
+
+#SFTMASN
+
+AWESOGER
+
+
+
+5. The letters of "AWESOME" are found in the zeroth to sixth column, all in row 0. These letters are substituted with "#" character. Notice that 'S' in row 0 is used both for the words "AWESOME" and "STUDY". Also, 'A' at (0,0) is used both for the words "ADDRESS "and "AWESOME". Since there are 5 words, there is no word remaining to find in the character grid. Hence, your program should print the final version of the grid given below on the screen, where each row will be separated with a newline character ('\n') including the last row.
+
+
+
+#######A
+
+#EKT#AD#
+
+#Z#ZQ##C
+
+#P#YR##L
+
+#E#E#PR#
+
+#F##QBDA
+
+#SFTMASN
+
+AWESOGER
+ex·am
+Short for examination (sense 2).
+More »
