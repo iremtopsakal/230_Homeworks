@@ -1,0 +1,39 @@
+Cargo Ship
+--------------------------------------------------------
+
+You have to transport a maximum of 15 different loads from one port to another. 
+Carrying capacity of a cargo ship, which will transport those loads, is 50 tons. 
+Loads are enumerated and the information about the weight of every load is given as input.
+
+Suppose that the weight of every load is smaller than or equal to 50 tons and greater than 0.
+
+You will read the weight of every load from the input in a single line. 
+Your input will end with a -1. 
+You will print the number of trips necessary.
+
+Sample Runs
+----------------------------------------------------------
+
+Input:
+50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 -1
+
+Output:
+15
+
+Input:
+20 25 25 36 37 25 20 10 50 9 16 45 32 10 25 -1
+
+Output:
+11
+
+Input:
+14 16 50 10 10 19 45 40 32 24 25 47 10 12 25 -1
+
+Output:
+9
+
+Input:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 -1
+
+Output:
+3
