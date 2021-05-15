@@ -1,0 +1,59 @@
+TWIN PRIMES IN A RANGE OF NUMBERS
+-----------------------------------
+
+Twin primes are two consequetive odd numbers that are prime.
+
+Write a function that returns 1 if the input is a prime and
+0 otherwise.
+
+int is_prime(int number) {
+}
+
+Write a C Program to generate all twin primes in a given range
+of numbers using the is_prime function.
+
+Your program will input following from the command line:
+
+min : start of range, an integer
+
+max : end of range, an integer
+
+These numbers define the range of numbers [min,max]
+inclusively.
+
+
+Here is a sample input line:
+
+1 7
+
+We will output every twin prime in the range
+[1, 7].
+
+Here is the output of the above input line:
+
+3 5
+5 7
+
+Sample Runs:
+-----------
+
+Input:
+1 7
+
+Output:
+3 5
+5 7
+
+Input:
+2 9
+
+Output:
+3 5
+5 7
+
+Input:
+7 21
+
+Output:
+11 13
+17 19
